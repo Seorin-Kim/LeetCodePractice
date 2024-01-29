@@ -28,7 +28,7 @@ int** minimumAbsDifference(int* arr, int arrSize, int* returnSize, int** returnC
     }
 
     // 정답 정수 쌍의 포인터를 저장하기 위한 answer 동적할당
-    // answer의 각 크기를 저장하기 위한 ptr 동적할당
+    // 정답 정수 쌍의 각 크기를 저장하기 위한 ptr 동적할당
     int **answer = (int **)malloc(sizeof(int *) * cnt);
     int *ptr = (int *)malloc(sizeof(int) * cnt);
     // 이웃한 정수끼리의 차이가 minimum이라면, 해당 정수 쌍을 answer에 저장
