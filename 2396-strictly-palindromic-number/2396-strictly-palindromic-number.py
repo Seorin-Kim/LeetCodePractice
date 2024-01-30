@@ -1,0 +1,20 @@
+class Solution:
+    def isStrictlyPalindromic(self, n: int) -> bool:
+        # base b를 2부터 n-2까지 반복
+        for b in range(2, n-1):
+            num = n         # n이 소실되면 안되므로 num에 복사해서 사용
+            base_n = []     # b진법으로 변환한 숫자 저장하기 위한 리스트 (역순으로 저장됨, 여기에서는 굳이 뒤집을 필요 x)
+
+            # b로 나눈 몫이 0이 될 때까지, 반복해서 b로 나누기
+            # 몫은 다음 나눗셈에 사용, 나머지는 b진법 변환을 위한 숫자로 사용
+            while (num > 0):
+                num, remain = divmod(num, b)
+                base_n.append(remain)
+            
+            # base_n의 양끝을 비교하며 대칭 여부 결정
+            for i in range(len(base_n)//2):
+                if base_n[i] != base_n[len(base_n)-1-i]:    # 한 번이라도 다르면 False
+                    return False
+        # 모두 통과하면 True
+        return True
+
