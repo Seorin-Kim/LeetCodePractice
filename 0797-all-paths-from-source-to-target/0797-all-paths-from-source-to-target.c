@@ -26,7 +26,6 @@ void dfs(int** graph, int graphSize, int* graphColSize, int curr, int* path, int
         // recursive하게 반복
         dfs(graph, graphSize, graphColSize, graph[curr][i], path, pathIdx, result, resultIdx, ptr);
         // result에 추가한 path는 지우기
-        path[*pathIdx-1] = 0;
         *pathIdx -= 1;
     }
     return;
