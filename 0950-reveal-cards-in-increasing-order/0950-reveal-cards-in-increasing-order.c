@@ -2,6 +2,8 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
+
+// deque 구현
 #define TRUE 1
 #define FALSE 0
 #define ERROR -1
@@ -106,13 +108,6 @@ int* deckRevealedIncreasing(int* deck, int deckSize, int* returnSize) {
         // 큐를 오른쪽으로 한 칸씩 rotate
         add_front(result, get_rear(result), dequeSize);
         delete_rear(result, dequeSize);
-
-        // int i = (result->front+1) % dequeSize;
-        // while (i != result->rear) {
-        //     printf("%d ", result->data[i]);
-        //     i = (i+1) % dequeSize;
-        // }
-        // printf("%d ", result->data[i]);
 
         // 큐의 왼쪽(앞)에 추가
         add_front(result, deck[i], dequeSize);
