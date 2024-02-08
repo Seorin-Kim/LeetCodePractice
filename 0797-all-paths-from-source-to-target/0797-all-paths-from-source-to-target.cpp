@@ -3,10 +3,6 @@ public:
     void dfs(vector<vector<int>>& graph, int curr, vector<int>& path, vector<vector<int>>& result) {
         // 현재 노드가 (n-1) 노드이면, 찾은 path를 result에 추가
         if (curr == graph.size()-1) {
-            // path의 복사본을 result에 추가 (이후에 path를 변경하면서 재사용할 것이기 때문)
-            vector<int> copyPath;
-            copyPath.resize((int)(path.size()));
-            copy(path.begin(), path.end(), copyPath.begin());
             result.push_back(path);
             return;
         }
